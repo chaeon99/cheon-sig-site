@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>체온 시그목록</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+  <img src="logo.jpg" alt="체온 로고" class="main-image" />
+  <h1>체온 시그목록</h1>
+  <p class="sub-text">시그 제목이나 개수로 검색하시면 됩니다. <div class=""></div></p>
+</header>
+    <section class="search-section">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="검색어를 입력하세요"
+      />
+    </section>
+<section class="range-section">
+  <button class="range-btn active" data-range="all">전체</button>
+  <button class="range-btn" data-range="100-999">100~999</button>
+  <button class="range-btn" data-range="1000-1999">1000~1999</button>
+  <button class="range-btn" data-range="2000-2999">2000~2999</button>
+  <button class="range-btn" data-range="3000-9999">3000~9999</button>
+  <button class="range-btn" data-range="10000+">10000+</button>
+  <button class="range-btn" data-range="hot">열혈시그</button>
+</section>
+    <section class="list-section">
+      <div class="list-header">
+        <div class="col-id">번호</div>
+        <div class="col-title">제목</div>
+      </div>
+
+      <div id="resultList" class="list-body"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
