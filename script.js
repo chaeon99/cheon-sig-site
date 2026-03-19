@@ -58,20 +58,15 @@ function filterByRange(items, range) {
     const num = getNumericId(item.id);
     if (num === null) return false;
 
-    if (range === "100-199") return num >= 100 && num <= 199;
-    if (range === "200-299") return num >= 200 && num <= 299;
-    if (range === "300-399") return num >= 300 && num <= 399;
-    if (range === "400-499") return num >= 400 && num <= 499;
-    if (range === "500-599") return num >= 500 && num <= 599;
-    if (range === "600-699") return num >= 600 && num <= 699;
-    if (range === "700-799") return num >= 700 && num <= 799;
-    if (range === "800-899") return num >= 800 && num <= 899;
-    if (range === "900-999") return num >= 900 && num <= 999;
+    if (range === "100s") return num >= 100 && num <= 199;
+    if (range === "200s") return num >= 200 && num <= 299;
+    if (range === "300s") return num >= 300 && num <= 399;
+    if (range === "400to900") return num >= 400 && num <= 999;
 
-    if (range === "1000-1999") return num >= 1000 && num <= 1999;
-    if (range === "2000-2999") return num >= 2000 && num <= 2999;
-    if (range === "3000-9999") return num >= 3000 && num <= 9999;
-    if (range === "10000+") return num >= 10000;
+    if (range === "1000s") return num >= 1000 && num <= 1999;
+    if (range === "2000s") return num >= 2000 && num <= 2999;
+    if (range === "3000s") return num >= 3000 && num <= 9999;
+    if (range === "10000s") return num >= 10000;
 
     return true;
   });
