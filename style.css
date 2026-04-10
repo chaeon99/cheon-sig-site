@@ -28,6 +28,15 @@ body {
   font-size: 14px;
 }
 
+.main-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+}
+
 .search-section {
   margin-bottom: 20px;
 }
@@ -44,6 +53,37 @@ body {
 
 #searchInput:focus {
   border-color: #888;
+}
+
+.range-section,
+.sort-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.range-btn,
+.sort-btn {
+  padding: 14px 22px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.range-btn:hover,
+.sort-btn:hover {
+  background: #f5f5f5;
+}
+
+.range-btn.active,
+.sort-btn.active {
+  background: #222;
+  color: white;
+  border-color: #222;
 }
 
 .list-section {
@@ -99,99 +139,10 @@ body {
   padding: 20px;
   text-align: center;
   color: #777;
-}
-
-.detail-section {
-  margin-top: 24px;
-}
-
-.detail-section h2 {
-  margin-bottom: 12px;
-  font-size: 22px;
-}
-
-.detail-box {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 18px;
-  line-height: 1.7;
-  white-space: pre-line;
-}
-
-.tags {
-  color: #666;
-  font-size: 14px;
-}
-
-.date {
+}.range-description {
+  margin-top: -8px;
+  margin-bottom: 18px;
   font-size: 13px;
-  color: #888;
-}
-.main-image {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px;
-  border-radius: 12px;
-}
-.range-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.range-btn {
-  padding: 10px 14px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.range-btn:hover {
-  background: #f5f5f5;
-}
-
-.range-btn.active {
-  background: #222;
-  color: white;
-  border-color: #222;
-}
-.sort-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.sort-btn {
-  padding: 10px 14px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.sort-btn:hover {
-  background: #f5f5f5;
-}
-
-.sort-btn.active {
-  background: #222;
-  color: white;
-  border-color: #222;
-}
-.range-btn {
-  padding: 14px 22px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+  color: #777;
+  min-height: 18px;
 }
