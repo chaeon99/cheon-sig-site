@@ -2,6 +2,7 @@ let allData = [];
 let currentRange = "all";
 let currentSort = "default";
 let currentKeyword = "";
+
 const hotSigAliasMap = {
   "1027": "익절",
   "1033": "꼰돔",
@@ -13,7 +14,7 @@ const hotSigAliasMap = {
   "1122": "위장",
   "1872": "약속해실전",
   "2065": "큰물개",
-  "2872": "인생은실전!!",
+  "2872": "인생은실전!!"
 };
 
 const hotSigIds = Object.keys(hotSigAliasMap);
@@ -27,6 +28,7 @@ const newSigIds = [
   "1810",
   "2102"
 ];
+
 const realHotAliasMap = {
   "130": "캉",
   "165": "잇츠섹시",
@@ -47,6 +49,7 @@ const realHotAliasMap = {
   "1515": "짭승환2",
   "3000": "씨나인"
 };
+
 const realHotSigIds = [
   "130",
   "165",
@@ -125,7 +128,9 @@ function filterByRange(items, range) {
 }
 
 function filterByKeyword(items, keyword) {
-  const lowerKeyword = keyword.toLowerCase();
+  const lowerKeyword = keyword.toLowerCase().trim();
+
+  if (!lowerKeyword) return items;
 
   return items.filter(item => {
     const idMatch = String(item.id).toLowerCase().includes(lowerKeyword);
@@ -176,6 +181,24 @@ function sortItems(items, sortType) {
   return copied;
 }
 
+function updateRangeDescription() {
+  const descriptionBox = document.getElementById("rangeDescription");
+
+  if (!descriptionBox) return;
+
+  if (currentRange === "new") {
+    descriptionBox.textContent = "최근 새롭게 나온 시그입니다!";
+    return;
+  }
+
+  if (currentRange === "realhot") {
+    descriptionBox.textContent = "최근 기간동안 자주 나왔던 시그입니다!";
+    return;
+  }
+
+  descriptionBox.textContent = "";
+}
+
 function renderList(items) {
   const resultList = document.getElementById("resultList");
 
@@ -184,12 +207,27 @@ function renderList(items) {
     return;
   }
 
-  resultList.innerHTML = items.map(item => `
-    <div class="list-row">
-      <div class="row-id">${item.id}</div>
-      <div class="row-title">${getDisplayTitle(item)}</div>
-    </div>
-  `).join("");
+  resultList.innerHTML = items.map(item => {
+    const displayTitle = getDisplayTitle(item);
+
+    if (item.clip) {
+      return `
+        <div class="list-row">
+          <div class="row-id">${item.id}</div>
+          <div class="row-title">
+            <a href="${item.clip}" target="_blank" rel="noopener noreferrer">${displayTitle}</a>
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="list-row">
+        <div class="row-id">${item.id}</div>
+        <div class="row-title">${displayTitle}</div>
+      </div>
+    `;
+  }).join("");
 }
 
 function updateList() {
@@ -206,10 +244,12 @@ async function init() {
   updateList();
 
   const searchInput = document.getElementById("searchInput");
-  searchInput.addEventListener("input", function (e) {
-    currentKeyword = e.target.value;
-    updateList();
-  });
+  if (searchInput) {
+    searchInput.addEventListener("input", function (e) {
+      currentKeyword = e.target.value;
+      updateList();
+    });
+  }
 
   const rangeButtons = document.querySelectorAll(".range-btn");
   rangeButtons.forEach(button => {
@@ -232,22 +272,6 @@ async function init() {
       updateList();
     });
   });
-}function updateRangeDescription() {
-  const descriptionBox = document.getElementById("rangeDescription");
-
-  if (!descriptionBox) return;
-
-  if (currentRange === "new") {
-    descriptionBox.textContent = "최근 새롭게 나온 시그입니다!";
-    return;
-  }
-
-  if (currentRange === "realhot") {
-    descriptionBox.textContent = "최근 기간동안 자주 나왔던 시그입니다!";
-    return;
-  }
-
-  descriptionBox.textContent = "";
 }
 
 init();
