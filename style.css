@@ -134,16 +134,14 @@ body {
   color: #222;
 }
 
-/* 링크가 있는 제목만 아주 살짝 티 나게 */
 .row-title a {
-  color: #3f4a5a;
+  color: #2563eb;
   text-decoration: none;
-  display: inline-block;
-  width: 100%;
+  font-weight: 600;
 }
 
 .row-title a:hover {
-  color: #2f3a4a;
+  color: #1d4ed8;
   text-decoration: underline;
 }
 
