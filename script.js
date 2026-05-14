@@ -21,6 +21,7 @@ const hotSigIds = Object.keys(hotSigAliasMap);
 
 const newSigIds = [
  "107", 
+ "143", 
  "499",
  "1092", 
  "1114", 
