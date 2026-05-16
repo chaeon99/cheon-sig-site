@@ -311,3 +311,6 @@ async function init() {
     });
   });
 }
+
+
+init();
