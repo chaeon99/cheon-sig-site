@@ -46,7 +46,7 @@ const newSigIds = [
 
 const realHotAliasMap = {
   "107": "츄",
-  "143": "Twenkle duck",
+  "143": "트월킹덕",
   "191": "간바레",
   "202": "젤리젤리",
   "306": "백개내놔",
