@@ -19,8 +19,8 @@ const hotSigAliasMap = {
 const hotSigIds = Object.keys(hotSigAliasMap);
 
 const newSigIds = [
- "107", 
- "143", 
+ "107",
+ "156", 
  "266", 
  "343", 
  "499",
@@ -59,7 +59,7 @@ const realHotAliasMap = {
   "500": "호미들",
   "1000": "웰컴투씨나인",
   "1027": "익절",
-  "1032": "그니깐여",
+  "1032": "부라",
   "1033": "꼰돔",
   "1041": "라네트",
   "1058": "오베R",
