@@ -4,6 +4,7 @@ let currentSort = "default";
 let currentKeyword = "";
 
 const hotSigAliasMap = {
+  "1019": "멍믕이",
   "1027": "익절",
   "1032": "부라",
   "1033": "꼰돔",
@@ -40,7 +41,8 @@ const newSigIds = [
   "309",
   "310",
   "467",
-  "1000"
+  "1000",
+  "1019"
 ];
 
 const realHotAliasMap = {
